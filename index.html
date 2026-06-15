@@ -158,9 +158,9 @@
   <div class="section-label"><i class="ti ti-user"></i><span data-i18n="your_info">Suas informações</span></div>
   <div class="grid2" style="margin-bottom:10px">
     <input class="field-3d" type="text" id="fname" data-i18n-ph="ph_name" placeholder="Nome completo" autocomplete="name">
-    <input class="field-3d" type="tel" id="phone" data-i18n-ph="ph_phone" placeholder="Número de telefone" autocomplete="tel">
+    <input class="field-3d" type="text" id="phone" data-i18n-ph="ph_phone" placeholder="Número de telefone" autocomplete="tel">
   </div>
-  <input class="field-3d" type="email" id="email" data-i18n-ph="ph_email" placeholder="Endereço de e-mail" autocomplete="email" style="margin-bottom:10px">
+  <input class="field-3d" type="text" id="email" data-i18n-ph="ph_email" placeholder="E-mail (opcional)" autocomplete="email" style="margin-bottom:10px">
 
   <!-- WhatsApp -->
   <div class="section-label"><i class="ti ti-brand-whatsapp"></i>WhatsApp</div>
@@ -341,7 +341,7 @@
   <!-- Share Link row -->
   <div class="section-label" style="margin-top:20px"><i class="ti ti-link"></i><span data-i18n="share_label">Compartilhar este formulário</span></div>
   <div class="share-row">
-    <input class="share-input" type="url" id="share_link" data-i18n-ph="ph_share" placeholder="[Link será adicionado em breve — aguarde!]" readonly>
+    <input class="share-input" type="url" id="share_link" data-i18n-ph="ph_share" placeholder="[Link será adicionado em breve — aguarde!]" value="https://taniad2169.github.io/Lena-Couture/" readonly>
     <button class="share-btn" onclick="shareOnWhatsApp()">
       <i class="ti ti-brand-whatsapp"></i>
       <span data-i18n="share_btn">Compartilhar</span>
@@ -429,7 +429,7 @@ var T = {
     your_info:'Suas informações',
     ph_name:'Nome completo',
     ph_phone:'Número de telefone',
-    ph_email:'Endereço de e-mail',
+    ph_email:'E-mail (opcional)',
     wa_yes:'Sim, tenho WhatsApp',
     wa_no:'Não',
     wa_note:'Enviaremos o resumo do seu pedido via WhatsApp',
@@ -479,7 +479,7 @@ var T = {
     fwd_btn:'Encaminhar ao Brasil',
     btn_call:'Ligar',
     btn_msg:'Mensagem',
-    alert_fill:'Por favor, preencha seu nome, telefone e e-mail.',
+    alert_fill:'Por favor, preencha seu nome e número de telefone.',
     alert_brazil:'Por favor, insira um número de WhatsApp brasileiro válido.\nExemplo: 5521999990000',
     msg_header:'*Lena Couture High Fashion — Pedido de Design*',
     msg_name:'*Nome:*', msg_phone:'*Telefone:*', msg_email:'*E-mail:*',
@@ -497,7 +497,7 @@ var T = {
     your_info:'Tu información',
     ph_name:'Nombre completo',
     ph_phone:'Número de teléfono',
-    ph_email:'Dirección de correo',
+    ph_email:'Correo (opcional)',
     wa_yes:'Sí, tengo WhatsApp',
     wa_no:'No',
     wa_note:'Te enviaremos el resumen de tu pedido por WhatsApp',
@@ -547,7 +547,7 @@ var T = {
     fwd_btn:'Reenviar a Brasil',
     btn_call:'Llamar',
     btn_msg:'Mensaje',
-    alert_fill:'Por favor completa tu nombre, teléfono y correo electrónico.',
+    alert_fill:'Por favor completa tu nombre y número de teléfono.',
     alert_brazil:'Por favor ingresa un número de WhatsApp de Brasil válido.\nEjemplo: 5521999990000',
     msg_header:'*Lena Couture High Fashion — Pedido de Diseño*',
     msg_name:'*Nombre:*', msg_phone:'*Teléfono:*', msg_email:'*Correo:*',
@@ -565,7 +565,7 @@ var T = {
     your_info:'Your information',
     ph_name:'Full name',
     ph_phone:'Phone number',
-    ph_email:'Email address',
+    ph_email:'Email (optional)',
     wa_yes:'Yes, I have WhatsApp',
     wa_no:'No',
     wa_note:"We'll send your order summary via WhatsApp",
@@ -615,7 +615,7 @@ var T = {
     fwd_btn:'Forward to Brazil',
     btn_call:'Call',
     btn_msg:'Message',
-    alert_fill:'Please fill in your name, phone number, and email address.',
+    alert_fill:'Please fill in your name and phone number.',
     alert_brazil:'Please enter a valid Brazilian WhatsApp number.\nExample: 5521999990000',
     msg_header:'*Lena Couture High Fashion — Design Request*',
     msg_name:'*Name:*', msg_phone:'*Phone:*', msg_email:'*Email:*',
@@ -725,7 +725,7 @@ function submitForm() {
   var name  = document.getElementById('fname').value.trim();
   var phone = document.getElementById('phone').value.trim();
   var email = document.getElementById('email').value.trim();
-  if (!name || !phone || !email) { alert(t.alert_fill); return; }
+  if (!name || !phone) { alert(t.alert_fill); return; }
   var msg = buildMessage(t.msg_header);
   window.open('https://wa.me/5521982183993?text=' + encodeURIComponent(msg), '_blank');
   document.getElementById('success_msg').style.display = 'block';
