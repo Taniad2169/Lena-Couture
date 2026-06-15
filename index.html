@@ -33,7 +33,12 @@
   .mannequin-wrap{background:rgba(0,0,0,0.2);border:1.5px solid rgba(91,209,227,0.4);border-radius:12px;padding:12px;text-align:center;margin-bottom:24px;box-shadow:var(--field-shadow)}
   .mannequin-img{width:100%;max-height:420px;object-fit:contain;border-radius:8px;display:block}
 
-  .section-label{font-size:11px;font-weight:700;color:#5bd1e3;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px;margin-top:18px;display:flex;align-items:center;gap:6px}
+  .meas-note{font-size:12px;color:#87c7e0;font-weight:600;margin-bottom:12px;font-style:italic}
+  .meas-block{background:rgba(0,0,0,0.15);border:1px solid rgba(91,209,227,0.2);border-radius:12px;padding:14px 12px;margin-bottom:8px;display:flex;flex-direction:column;gap:10px}
+  .meas-row{display:flex;align-items:center;gap:10px}
+  .meas-label{font-size:11px;font-weight:700;color:#5bd1e3;text-transform:uppercase;letter-spacing:.8px;min-width:90px;flex-shrink:0}
+  .meas-row .field-3d{margin-bottom:0;flex:1}
+    .section-label{font-size:11px;font-weight:700;color:#5bd1e3;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px;margin-top:18px;display:flex;align-items:center;gap:6px}
   .section-label i{color:#5bd1e3;font-size:16px}
 
   .field-3d{width:100%;padding:10px 14px;border:1.5px solid rgba(91,209,227,0.35);border-radius:10px;font-size:14px;color:#fff;font-weight:600;background:rgba(0,0,0,0.25);box-shadow:var(--field-shadow);outline:none;transition:box-shadow .2s,border-color .2s;appearance:none;-webkit-appearance:none}
@@ -172,144 +177,207 @@
 
   <div class="divider"></div>
 
-  <!-- Measurements -->
+  <!-- MEASUREMENTS -->
   <div class="section-label"><i class="ti ti-ruler-2"></i><span data-i18n="your_meas">Suas medidas</span></div>
-  <select class="field-3d" id="measurements">
-    <option value="" disabled selected data-i18n="meas_placeholder">-- Selecione suas medidas --</option>
-    <optgroup data-i18n-label="og_bust" label="Busto">
-      <option value="bust_28">28&quot; / 71cm — XS</option>
-      <option value="bust_30">30&quot; / 76cm — S</option>
-      <option value="bust_32">32&quot; / 81cm — S/M</option>
-      <option value="bust_34">34&quot; / 86cm — M</option>
-      <option value="bust_36">36&quot; / 91cm — M/L</option>
-      <option value="bust_38">38&quot; / 96cm — L</option>
-      <option value="bust_40">40&quot; / 101cm — XL</option>
-      <option value="bust_42">42&quot; / 106cm — XXL</option>
-      <option value="bust_44">44&quot; / 111cm — XXL</option>
-      <option value="bust_46">46&quot; / 116cm — XXXL</option>
-      <option value="bust_48">48&quot; / 121cm — XXXL</option>
-      <option value="bust_50">50&quot; / 127cm — XXXL</option>
-    </optgroup>
-    <optgroup data-i18n-label="og_waist" label="Cintura">
-      <option value="waist_22">22&quot; / 56cm — XS</option>
-      <option value="waist_24">24&quot; / 61cm — S</option>
-      <option value="waist_26">26&quot; / 66cm — S/M</option>
-      <option value="waist_28">28&quot; / 71cm — M</option>
-      <option value="waist_30">30&quot; / 76cm — M/L</option>
-      <option value="waist_32">32&quot; / 81cm — L</option>
-      <option value="waist_34">34&quot; / 86cm — XL</option>
-      <option value="waist_36">36&quot; / 91cm — XXL</option>
-      <option value="waist_38">38&quot; / 96cm — XXL</option>
-      <option value="waist_40">40&quot; / 101cm — XXXL</option>
-      <option value="waist_42">42&quot; / 106cm — XXXL</option>
-      <option value="waist_44">44&quot; / 111cm — XXXL</option>
-    </optgroup>
-    <optgroup data-i18n-label="og_hips" label="Quadril">
-      <option value="hips_32">32&quot; / 81cm — XS</option>
-      <option value="hips_34">34&quot; / 86cm — S</option>
-      <option value="hips_36">36&quot; / 91cm — S/M</option>
-      <option value="hips_38">38&quot; / 96cm — M</option>
-      <option value="hips_40">40&quot; / 101cm — L</option>
-      <option value="hips_42">42&quot; / 106cm — XL</option>
-      <option value="hips_44">44&quot; / 111cm — XXL</option>
-      <option value="hips_46">46&quot; / 116cm — XXL</option>
-      <option value="hips_48">48&quot; / 121cm — XXXL</option>
-      <option value="hips_50">50&quot; / 127cm — XXXL</option>
-      <option value="hips_52">52&quot; / 132cm — XXXL</option>
-    </optgroup>
-    <optgroup data-i18n-label="og_shoulder" label="Ombro">
-      <option value="shoulder_12">12&quot; / 30cm — XS</option>
-      <option value="shoulder_13">13&quot; / 33cm — S</option>
-      <option value="shoulder_14">14&quot; / 35cm — M</option>
-      <option value="shoulder_15">15&quot; / 38cm — L</option>
-      <option value="shoulder_16">16&quot; / 40cm — XL</option>
-      <option value="shoulder_17">17&quot; / 43cm — XXL</option>
-      <option value="shoulder_18">18&quot; / 45cm — XXL</option>
-      <option value="shoulder_19">19&quot; / 48cm — XXXL</option>
-      <option value="shoulder_20">20&quot; / 50cm — XXXL</option>
-    </optgroup>
-    <optgroup data-i18n-label="og_height" label="Altura">
-      <option value="height_147">4'10&quot; / 147cm</option>
-      <option value="height_150">5'0&quot; / 150cm</option>
-      <option value="height_155">5'1&quot; / 155cm</option>
-      <option value="height_158">5'2&quot; / 158cm</option>
-      <option value="height_160">5'3&quot; / 160cm</option>
-      <option value="height_163">5'4&quot; / 163cm</option>
-      <option value="height_165">5'5&quot; / 165cm</option>
-      <option value="height_168">5'6&quot; / 168cm</option>
-      <option value="height_170">5'7&quot; / 170cm</option>
-      <option value="height_173">5'8&quot; / 173cm</option>
-      <option value="height_175">5'9&quot; / 175cm</option>
-      <option value="height_178">5'10&quot; / 178cm</option>
-      <option value="height_180">5'11&quot; / 180cm</option>
-      <option value="height_183">6'0&quot; / 183cm</option>
-      <option value="height_185">6'1&quot; / 185cm</option>
-    </optgroup>
-    <optgroup data-i18n-label="og_inseam" label="Entreperna">
-      <option value="inseam_26">26&quot; / 66cm — XS/S</option>
-      <option value="inseam_28">28&quot; / 71cm — S/M</option>
-      <option value="inseam_30">30&quot; / 76cm — M</option>
-      <option value="inseam_32">32&quot; / 81cm — L</option>
-      <option value="inseam_34">34&quot; / 86cm — XL</option>
-      <option value="inseam_36">36&quot; / 91cm — XXL/XXXL</option>
-    </optgroup>
-    <optgroup data-i18n-label="og_sleeve" label="Manga">
-      <option value="sleeve_22">22&quot; / 56cm — XS/S</option>
-      <option value="sleeve_23">23&quot; / 58cm — S</option>
-      <option value="sleeve_24">24&quot; / 61cm — M</option>
-      <option value="sleeve_25">25&quot; / 63cm — L</option>
-      <option value="sleeve_26">26&quot; / 66cm — XL</option>
-      <option value="sleeve_27">27&quot; / 68cm — XXL</option>
-      <option value="sleeve_28">28&quot; / 71cm — XXXL</option>
-    </optgroup>
-    <optgroup data-i18n-label="og_length" label="Comprimento do Vestido">
-      <option value="length_32" data-i18n="len_32">32&quot; / 81cm — Mini/Micro</option>
-      <option value="length_36" data-i18n="len_36">36&quot; / 91cm — Curto</option>
-      <option value="length_40" data-i18n="len_40">40&quot; / 101cm — Altura do joelho</option>
-      <option value="length_44">44&quot; / 111cm — Midi</option>
-      <option value="length_48" data-i18n="len_48">48&quot; / 121cm — Abaixo do joelho</option>
-      <option value="length_52" data-i18n="len_52">52&quot; / 132cm — Longo</option>
-      <option value="length_56" data-i18n="len_56">56&quot; / 142cm — Comprimento total</option>
-      <option value="length_60" data-i18n="len_60">60&quot; / 152cm — Com cauda</option>
-    </optgroup>
-  </select>
+  <p class="meas-note" data-i18n="meas_note">Selecione cada medida — todas serão enviadas juntas no WhatsApp</p>
+
+  <div class="meas-block">
+
+    <div class="meas-row">
+      <label class="meas-label" data-i18n="og_bust">Busto</label>
+      <select class="field-3d" id="meas_bust">
+        <option value="" selected data-i18n="meas_skip">— (pular)</option>
+        <option value="Busto 28in/71cm — XS">28&quot; / 71cm — XS</option>
+        <option value="Busto 30in/76cm — S">30&quot; / 76cm — S</option>
+        <option value="Busto 32in/81cm — S/M">32&quot; / 81cm — S/M</option>
+        <option value="Busto 34in/86cm — M">34&quot; / 86cm — M</option>
+        <option value="Busto 36in/91cm — M/L">36&quot; / 91cm — M/L</option>
+        <option value="Busto 38in/96cm — L">38&quot; / 96cm — L</option>
+        <option value="Busto 40in/101cm — XL">40&quot; / 101cm — XL</option>
+        <option value="Busto 42in/106cm — XXL">42&quot; / 106cm — XXL</option>
+        <option value="Busto 44in/111cm — XXL">44&quot; / 111cm — XXL</option>
+        <option value="Busto 46in/116cm — XXXL">46&quot; / 116cm — XXXL</option>
+        <option value="Busto 48in/121cm — XXXL">48&quot; / 121cm — XXXL</option>
+        <option value="Busto 50in/127cm — XXXL">50&quot; / 127cm — XXXL</option>
+      </select>
+    </div>
+
+    <div class="meas-row">
+      <label class="meas-label" data-i18n="og_waist">Cintura</label>
+      <select class="field-3d" id="meas_waist">
+        <option value="" selected data-i18n="meas_skip">— (pular)</option>
+        <option value="Cintura 22in/56cm — XS">22&quot; / 56cm — XS</option>
+        <option value="Cintura 24in/61cm — S">24&quot; / 61cm — S</option>
+        <option value="Cintura 26in/66cm — S/M">26&quot; / 66cm — S/M</option>
+        <option value="Cintura 28in/71cm — M">28&quot; / 71cm — M</option>
+        <option value="Cintura 30in/76cm — M/L">30&quot; / 76cm — M/L</option>
+        <option value="Cintura 32in/81cm — L">32&quot; / 81cm — L</option>
+        <option value="Cintura 34in/86cm — XL">34&quot; / 86cm — XL</option>
+        <option value="Cintura 36in/91cm — XXL">36&quot; / 91cm — XXL</option>
+        <option value="Cintura 38in/96cm — XXL">38&quot; / 96cm — XXL</option>
+        <option value="Cintura 40in/101cm — XXXL">40&quot; / 101cm — XXXL</option>
+        <option value="Cintura 42in/106cm — XXXL">42&quot; / 106cm — XXXL</option>
+        <option value="Cintura 44in/111cm — XXXL">44&quot; / 111cm — XXXL</option>
+      </select>
+    </div>
+
+    <div class="meas-row">
+      <label class="meas-label" data-i18n="og_hips">Quadril</label>
+      <select class="field-3d" id="meas_hips">
+        <option value="" selected data-i18n="meas_skip">— (pular)</option>
+        <option value="Quadril 32in/81cm — XS">32&quot; / 81cm — XS</option>
+        <option value="Quadril 34in/86cm — S">34&quot; / 86cm — S</option>
+        <option value="Quadril 36in/91cm — S/M">36&quot; / 91cm — S/M</option>
+        <option value="Quadril 38in/96cm — M">38&quot; / 96cm — M</option>
+        <option value="Quadril 40in/101cm — L">40&quot; / 101cm — L</option>
+        <option value="Quadril 42in/106cm — XL">42&quot; / 106cm — XL</option>
+        <option value="Quadril 44in/111cm — XXL">44&quot; / 111cm — XXL</option>
+        <option value="Quadril 46in/116cm — XXL">46&quot; / 116cm — XXL</option>
+        <option value="Quadril 48in/121cm — XXXL">48&quot; / 121cm — XXXL</option>
+        <option value="Quadril 50in/127cm — XXXL">50&quot; / 127cm — XXXL</option>
+        <option value="Quadril 52in/132cm — XXXL">52&quot; / 132cm — XXXL</option>
+      </select>
+    </div>
+
+    <div class="meas-row">
+      <label class="meas-label" data-i18n="og_shoulder">Ombro</label>
+      <select class="field-3d" id="meas_shoulder">
+        <option value="" selected data-i18n="meas_skip">— (pular)</option>
+        <option value="Ombro 12in/30cm — XS">12&quot; / 30cm — XS</option>
+        <option value="Ombro 13in/33cm — S">13&quot; / 33cm — S</option>
+        <option value="Ombro 14in/35cm — M">14&quot; / 35cm — M</option>
+        <option value="Ombro 15in/38cm — L">15&quot; / 38cm — L</option>
+        <option value="Ombro 16in/40cm — XL">16&quot; / 40cm — XL</option>
+        <option value="Ombro 17in/43cm — XXL">17&quot; / 43cm — XXL</option>
+        <option value="Ombro 18in/45cm — XXL">18&quot; / 45cm — XXL</option>
+        <option value="Ombro 19in/48cm — XXXL">19&quot; / 48cm — XXXL</option>
+        <option value="Ombro 20in/50cm — XXXL">20&quot; / 50cm — XXXL</option>
+      </select>
+    </div>
+
+    <div class="meas-row">
+      <label class="meas-label" data-i18n="og_height">Altura</label>
+      <select class="field-3d" id="meas_height">
+        <option value="" selected data-i18n="meas_skip">— (pular)</option>
+        <option value="Altura 4ft10/147cm">4'10&quot; / 147cm</option>
+        <option value="Altura 5ft0/150cm">5'0&quot; / 150cm</option>
+        <option value="Altura 5ft1/155cm">5'1&quot; / 155cm</option>
+        <option value="Altura 5ft2/158cm">5'2&quot; / 158cm</option>
+        <option value="Altura 5ft3/160cm">5'3&quot; / 160cm</option>
+        <option value="Altura 5ft4/163cm">5'4&quot; / 163cm</option>
+        <option value="Altura 5ft5/165cm">5'5&quot; / 165cm</option>
+        <option value="Altura 5ft6/168cm">5'6&quot; / 168cm</option>
+        <option value="Altura 5ft7/170cm">5'7&quot; / 170cm</option>
+        <option value="Altura 5ft8/173cm">5'8&quot; / 173cm</option>
+        <option value="Altura 5ft9/175cm">5'9&quot; / 175cm</option>
+        <option value="Altura 5ft10/178cm">5'10&quot; / 178cm</option>
+        <option value="Altura 5ft11/180cm">5'11&quot; / 180cm</option>
+        <option value="Altura 6ft0/183cm">6'0&quot; / 183cm</option>
+        <option value="Altura 6ft1/185cm">6'1&quot; / 185cm</option>
+      </select>
+    </div>
+
+    <div class="meas-row">
+      <label class="meas-label" data-i18n="og_inseam">Entreperna</label>
+      <select class="field-3d" id="meas_inseam">
+        <option value="" selected data-i18n="meas_skip">— (pular)</option>
+        <option value="Entreperna 26in/66cm — XS/S">26&quot; / 66cm — XS/S</option>
+        <option value="Entreperna 28in/71cm — S/M">28&quot; / 71cm — S/M</option>
+        <option value="Entreperna 30in/76cm — M">30&quot; / 76cm — M</option>
+        <option value="Entreperna 32in/81cm — L">32&quot; / 81cm — L</option>
+        <option value="Entreperna 34in/86cm — XL">34&quot; / 86cm — XL</option>
+        <option value="Entreperna 36in/91cm — XXL/XXXL">36&quot; / 91cm — XXL/XXXL</option>
+      </select>
+    </div>
+
+    <div class="meas-row">
+      <label class="meas-label" data-i18n="og_sleeve">Manga</label>
+      <select class="field-3d" id="meas_sleeve">
+        <option value="" selected data-i18n="meas_skip">— (pular)</option>
+        <option value="Manga 22in/56cm — XS/S">22&quot; / 56cm — XS/S</option>
+        <option value="Manga 23in/58cm — S">23&quot; / 58cm — S</option>
+        <option value="Manga 24in/61cm — M">24&quot; / 61cm — M</option>
+        <option value="Manga 25in/63cm — L">25&quot; / 63cm — L</option>
+        <option value="Manga 26in/66cm — XL">26&quot; / 66cm — XL</option>
+        <option value="Manga 27in/68cm — XXL">27&quot; / 68cm — XXL</option>
+        <option value="Manga 28in/71cm — XXXL">28&quot; / 71cm — XXXL</option>
+      </select>
+    </div>
+
+  </div>
+
+  <!-- DRESS LENGTH SECTION -->
+  <div class="section-label" style="margin-top:18px"><i class="ti ti-scissors"></i><span data-i18n="dress_length_label">Comprimento do Vestido</span></div>
+
+  <div class="meas-block">
+
+    <div class="meas-row">
+      <label class="meas-label" data-i18n="lbl_mini">Mini</label>
+      <select class="field-3d" id="meas_mini">
+        <option value="" selected data-i18n="meas_skip">— (pular)</option>
+        <option value="Mini — 32in/81cm (acima do joelho)">32&quot; / 81cm — Acima do joelho</option>
+        <option value="Mini — 36in/91cm (meio da coxa)">36&quot; / 91cm — Meio da coxa</option>
+      </select>
+    </div>
+
+    <div class="meas-row">
+      <label class="meas-label" data-i18n="lbl_midi">Midi</label>
+      <select class="field-3d" id="meas_midi">
+        <option value="" selected data-i18n="meas_skip">— (pular)</option>
+        <option value="Midi — 40in/101cm (altura do joelho)">40&quot; / 101cm — Altura do joelho</option>
+        <option value="Midi — 44in/111cm (abaixo do joelho)">44&quot; / 111cm — Abaixo do joelho</option>
+        <option value="Midi — 48in/121cm (meio da perna)">48&quot; / 121cm — Meio da perna</option>
+      </select>
+    </div>
+
+    <div class="meas-row">
+      <label class="meas-label" data-i18n="lbl_long">Longo</label>
+      <select class="field-3d" id="meas_long">
+        <option value="" selected data-i18n="meas_skip">— (pular)</option>
+        <option value="Longo — 52in/132cm (maxi)">52&quot; / 132cm — Maxi</option>
+        <option value="Longo — 56in/142cm (comprimento total)">56&quot; / 142cm — Comprimento total</option>
+        <option value="Longo — 60in/152cm (com cauda)">60&quot; / 152cm — Com cauda</option>
+      </select>
+    </div>
+
+  </div>
+
+  <div class="divider"></div>
 
   <!-- Garment Type -->
   <div class="section-label" style="margin-top:18px"><i class="ti ti-needle-thread"></i><span data-i18n="what_design">O que você quer criar?</span></div>
   <select class="field-3d" id="design_type">
     <option value="" disabled selected data-i18n="design_placeholder">-- Escolha a peça --</option>
     <optgroup data-i18n-label="og_dresses" label="Vestidos">
-      <option value="short_dress" data-i18n="g_short_dress">Vestido curto</option>
-      <option value="midi_dress" data-i18n="g_midi_dress">Vestido midi</option>
-      <option value="long_dress" data-i18n="g_long_dress">Vestido longo</option>
-      <option value="cocktail_dress" data-i18n="g_cocktail">Vestido coquetel</option>
-      <option value="evening_gown" data-i18n="g_gown">Vestido de gala</option>
-      <option value="beach_dress" data-i18n="g_beach">Vestido de praia</option>
-      <option value="wrap_dress" data-i18n="g_wrap">Vestido transpassado</option>
+      <option value="Vestido curto" data-i18n="g_short_dress">Vestido curto</option>
+      <option value="Vestido midi" data-i18n="g_midi_dress">Vestido midi</option>
+      <option value="Vestido longo" data-i18n="g_long_dress">Vestido longo</option>
+      <option value="Vestido de praia" data-i18n="g_beach">Vestido de praia</option>
+      <option value="Vestido transpassado" data-i18n="g_wrap">Vestido transpassado</option>
     </optgroup>
     <optgroup data-i18n-label="og_tops" label="Blusas">
-      <option value="blouse" data-i18n="g_blouse">Blusa</option>
-      <option value="shirt" data-i18n="g_shirt">Camisa</option>
-      <option value="crop_top" data-i18n="g_crop">Cropped</option>
-      <option value="bodysuit" data-i18n="g_body">Body</option>
-      <option value="tank_top" data-i18n="g_tank">Regata</option>
+      <option value="Blusa" data-i18n="g_blouse">Blusa</option>
+      <option value="Camisa" data-i18n="g_shirt">Camisa</option>
+      <option value="Cropped" data-i18n="g_crop">Cropped</option>
+      <option value="Body" data-i18n="g_body">Body</option>
+      <option value="Regata" data-i18n="g_tank">Regata</option>
     </optgroup>
     <optgroup data-i18n-label="og_bottoms" label="Partes de baixo">
-      <option value="skirt_short" data-i18n="g_skirt_s">Saia curta</option>
-      <option value="skirt_midi" data-i18n="g_skirt_m">Saia midi</option>
-      <option value="skirt_long" data-i18n="g_skirt_l">Saia longa</option>
-      <option value="pants" data-i18n="g_pants">Calça</option>
-      <option value="shorts" data-i18n="g_shorts">Shorts</option>
+      <option value="Saia curta" data-i18n="g_skirt_s">Saia curta</option>
+      <option value="Saia midi" data-i18n="g_skirt_m">Saia midi</option>
+      <option value="Saia longa" data-i18n="g_skirt_l">Saia longa</option>
+      <option value="Calça" data-i18n="g_pants">Calça</option>
+      <option value="Shorts" data-i18n="g_shorts">Shorts</option>
     </optgroup>
     <optgroup data-i18n-label="og_suits" label="Ternos &amp; Conjuntos">
-      <option value="pantsuit" data-i18n="g_pantsuit">Terninho feminino</option>
-      <option value="two_piece" data-i18n="g_two">Conjunto dois peças</option>
-      <option value="jumpsuit" data-i18n="g_jump">Macacão</option>
+      <option value="Terninho feminino" data-i18n="g_pantsuit">Terninho feminino</option>
+      <option value="Conjunto dois peças" data-i18n="g_two">Conjunto dois peças</option>
+      <option value="Macacão" data-i18n="g_jump">Macacão</option>
     </optgroup>
     <optgroup data-i18n-label="og_outer" label="Casacos">
-      <option value="blazer" data-i18n="g_blazer">Blazer</option>
-      <option value="coat" data-i18n="g_coat">Casaco</option>
-      <option value="jacket" data-i18n="g_jacket">Jaqueta</option>
+      <option value="Blazer" data-i18n="g_blazer">Blazer</option>
+      <option value="Casaco" data-i18n="g_coat">Casaco</option>
+      <option value="Jaqueta" data-i18n="g_jacket">Jaqueta</option>
     </optgroup>
   </select>
 
@@ -317,7 +385,7 @@
 
   <!-- Style Description -->
   <div class="section-label"><i class="ti ti-pencil"></i><span data-i18n="desc_label">Descreva seu estilo</span></div>
-  <textarea class="field-3d" id="style_desc" data-i18n-ph="ph_style" placeholder="Descreva seu estilo, preferências, tecidos, cores, ocasião... ex: Vestido longo, silhueta solta, tecido fluido, tons pastéis para casamento na praia..." maxlength="400" oninput="updateCount(this)"></textarea>
+  <textarea class="field-3d" id="style_desc" data-i18n-ph="ph_style" placeholder="Descreva seu estilo, preferências, tecidos, cores, ocasião..." maxlength="400" oninput="updateCount(this)"></textarea>
   <div class="char-count"><span id="char_used">0</span> / 400 <span data-i18n="chars">caracteres</span></div>
 
   <!-- Photo Upload -->
@@ -435,6 +503,10 @@ var T = {
     wa_note:'Enviaremos o resumo do seu pedido via WhatsApp',
     your_meas:'Suas medidas',
     meas_placeholder:'-- Selecione suas medidas --',
+    meas_note:'Selecione cada medida — todas serão enviadas juntas',
+    meas_skip:'— (pular)',
+    meas_note:'Selecciona cada medida — todas se enviarán juntas',
+    meas_skip:'— (saltar)',
     og_bust:'Busto', og_waist:'Cintura', og_hips:'Quadril',
     og_shoulder:'Ombro', og_height:'Altura', og_inseam:'Entreperna',
     og_sleeve:'Manga', og_length:'Comprimento do Vestido',
@@ -443,7 +515,7 @@ var T = {
     what_design:'O que você quer criar?',
     design_placeholder:'-- Escolha a peça --',
     g_short_dress:'Vestido curto', g_midi_dress:'Vestido midi', g_long_dress:'Vestido longo',
-    g_cocktail:'Vestido coquetel', g_gown:'Vestido de gala', g_beach:'Vestido de praia',
+    g_beach:'Vestido de praia',
     g_wrap:'Vestido transpassado', g_blouse:'Blusa', g_shirt:'Camisa',
     g_crop:'Cropped', g_body:'Body', g_tank:'Regata',
     g_skirt_s:'Saia curta', g_skirt_m:'Saia midi', g_skirt_l:'Saia longa',
@@ -476,6 +548,10 @@ var T = {
     unlocked:'Desbloqueado — encaminhar pedido ao Brasil',
     brazil_num_label:'Número WhatsApp do Brasil',
     ph_brazil:'55 + DDD + número ex: 5521999990000',
+    dress_length_label:'Comprimento do Vestido',
+    lbl_mini:'Mini',
+    lbl_midi:'Midi',
+    lbl_long:'Longo',
     fwd_btn:'Encaminhar ao Brasil',
     btn_call:'Ligar',
     btn_msg:'Mensagem',
@@ -511,7 +587,7 @@ var T = {
     what_design:'¿Qué quieres diseñar?',
     design_placeholder:'-- Elige una prenda --',
     g_short_dress:'Vestido corto', g_midi_dress:'Vestido midi', g_long_dress:'Vestido largo',
-    g_cocktail:'Vestido de cóctel', g_gown:'Vestido de gala', g_beach:'Vestido de playa',
+    g_beach:'Vestido de playa',
     g_wrap:'Vestido cruzado', g_blouse:'Blusa', g_shirt:'Camisa',
     g_crop:'Crop top', g_body:'Body', g_tank:'Camiseta sin mangas',
     g_skirt_s:'Falda corta', g_skirt_m:'Falda midi', g_skirt_l:'Falda larga',
@@ -544,6 +620,10 @@ var T = {
     unlocked:'Desbloqueado — reenviar pedido a Brasil',
     brazil_num_label:'Número de WhatsApp de Brasil',
     ph_brazil:'55 + DDD + número ej: 5521999990000',
+    dress_length_label:'Largo del Vestido',
+    lbl_mini:'Mini',
+    lbl_midi:'Midi',
+    lbl_long:'Largo',
     fwd_btn:'Reenviar a Brasil',
     btn_call:'Llamar',
     btn_msg:'Mensaje',
@@ -571,6 +651,8 @@ var T = {
     wa_note:"We'll send your order summary via WhatsApp",
     your_meas:'Your measurements',
     meas_placeholder:'-- Select your measurements --',
+    meas_note:'Select each measurement — all will be sent together',
+    meas_skip:'— (skip)',
     og_bust:'Bust', og_waist:'Waist', og_hips:'Hips',
     og_shoulder:'Shoulder', og_height:'Height', og_inseam:'Inseam',
     og_sleeve:'Sleeve', og_length:'Dress Length',
@@ -579,7 +661,7 @@ var T = {
     what_design:'What are you looking to design?',
     design_placeholder:'-- Choose a garment --',
     g_short_dress:'Short dress', g_midi_dress:'Midi dress', g_long_dress:'Long dress',
-    g_cocktail:'Cocktail dress', g_gown:'Evening gown', g_beach:'Beach dress',
+    g_beach:'Beach dress',
     g_wrap:'Wrap dress', g_blouse:'Blouse', g_shirt:'Shirt',
     g_crop:'Crop top', g_body:'Bodysuit', g_tank:'Tank top',
     g_skirt_s:'Short skirt', g_skirt_m:'Midi skirt', g_skirt_l:'Long skirt',
@@ -612,6 +694,10 @@ var T = {
     unlocked:'Unlocked — forward this order to Brazil',
     brazil_num_label:'Brazilian WhatsApp number',
     ph_brazil:'55 + DDD + number e.g. 5521999990000',
+    dress_length_label:'Dress Length',
+    lbl_mini:'Mini',
+    lbl_midi:'Midi',
+    lbl_long:'Long',
     fwd_btn:'Forward to Brazil',
     btn_call:'Call',
     btn_msg:'Message',
@@ -699,10 +785,16 @@ function buildMessage(header) {
   var phone  = document.getElementById('phone').value.trim();
   var email  = document.getElementById('email').value.trim();
   var wa     = document.querySelector('input[name="whatsapp"]:checked');
-  var meas   = document.getElementById('measurements');
   var design = document.getElementById('design_type');
   var style  = document.getElementById('style_desc').value.trim();
-  var measText   = meas.value   ? meas.options[meas.selectedIndex].text   : t.msg_not_sel;
+  var measIds = ['meas_bust','meas_waist','meas_hips','meas_shoulder','meas_height','meas_inseam','meas_sleeve','meas_mini','meas_midi','meas_long'];
+  var measLabels = {'meas_bust':t.og_bust,'meas_waist':t.og_waist,'meas_hips':t.og_hips,'meas_shoulder':t.og_shoulder,'meas_height':t.og_height,'meas_inseam':t.og_inseam,'meas_sleeve':t.og_sleeve,'meas_mini':t.lbl_mini,'meas_midi':t.lbl_midi,'meas_long':t.lbl_long};
+  var measLines = [];
+  measIds.forEach(function(id){
+    var el = document.getElementById(id);
+    if(el && el.value) measLines.push('  • ' + measLabels[id] + ': ' + el.value);
+  });
+  var measText = measLines.length > 0 ? '\n' + measLines.join('\n') : t.msg_not_sel;
   var designText = design.value ? design.options[design.selectedIndex].text : t.msg_not_sel;
   var waText     = wa ? (wa.value === 'yes' ? t.msg_wa_yes : t.msg_wa_no) : t.msg_wa_na;
   var photoNote  = photos.length > 0 ? photos.length + t.msg_photos_att : t.msg_no_photos;
@@ -712,7 +804,7 @@ function buildMessage(header) {
     t.msg_phone + ' ' + phone,
     t.msg_email + ' ' + email,
     t.msg_wa    + ' ' + waText, '',
-    t.msg_meas    + ' ' + measText,
+    t.msg_meas + measText,
     t.msg_garment + ' ' + designText, '',
     t.msg_style,
     style || t.msg_no_style, '',
